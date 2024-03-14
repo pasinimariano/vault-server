@@ -1,0 +1,41 @@
+version: '3'
+services:
+    vault-server:
+        image: hashicorp/vault
+        container_name: vault-server
+        ports:
+            - 8200:8200
+        restart: always
+        cap_add:
+            - IPC_LOCK
+        environment:
+            - VAULT_UI_LANGUAGE=es
+        volumes:
+            - ./vault/vault.hcl:/vault/config/vault.hcl
+            - ./vault/vault-data:/vault/data
+        entrypoint:
+            - 'vault'
+            - 'server'
+            - '-config=/vault/config/vault.hcl'
+
+    vault-server-unseal:
+        image: node:20.10.0
+        container_name: vault-server-unseal
+        restart: on-failure
+        volumes:
+            - ./vault/vault-unseal:/vault/vault-unseal
+        working_dir: /vault/vault-unseal
+        command: sh -c "npm install && npm start"
+
+        # vault-login-server:
+    #     image: node:20.10.0
+    #     container_name: vault-login-server
+    #     restart: on-failure
+    #     ports:
+    #         - 3000:3000
+    #     volumes:
+    #         - ./vault/vault-login:/vault/vault-login
+    #     working_dir: /vault/vault-login
+    #     command: sh -c "npm install && npm start"
+    #     depends_on:
+    #         - vault-server

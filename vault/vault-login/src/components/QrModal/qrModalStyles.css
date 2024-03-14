@@ -1,0 +1,64 @@
+.modal-header {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-logo {
+	margin-bottom: 5px;
+}
+
+.btn-close {
+	position: absolute;
+	right: 15px;
+}
+
+.modal-body {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-body-first {
+	margin-top: 10px;
+}
+
+.qr-image-container {
+	display: flex;
+	justify-content: center;
+	margin: 10px 0;
+}
+
+.form-control-container {
+	display: flex;
+}
+
+.form-control-code {
+	background-color: #ededed !important;
+	color: #898989;
+	font-family: inherit;
+	font-size: 14px;
+	width: 200px;
+	height: 42px;
+	border: none;
+	border-radius: 3px;
+	box-sizing: border-box;
+	line-height: 42px;
+	padding: 0 6px;
+	cursor: text;
+	margin: 5px;
+	outline: none;
+	margin: 10px 0;
+}
+
+.continue-btn {
+	width: 120px !important;
+}
+
+.cancel-btn {
+	width: 120px !important;
+	background-color: #636466 !important;
+}
+
+.showing-error-container {
+	display: flex;
+	justify-content: center;
+}

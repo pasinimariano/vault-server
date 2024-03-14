@@ -1,0 +1,53 @@
+{
+	"name": "base",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev --host --port 4560",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "npm run test:integration && npm run test:unit",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"test:integration": "playwright test",
+		"test:unit": "vitest"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.28.1",
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.27.4",
+		"@types/jsonwebtoken": "^9.0.6",
+		"@types/qrcode": "^1.5.5",
+		"@typescript-eslint/eslint-plugin": "^6.0.0",
+		"@typescript-eslint/parser": "^6.0.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-svelte": "^2.30.0",
+		"prettier": "^3.0.0",
+		"prettier-plugin-svelte": "^3.0.0",
+		"svelte": "^4.2.7",
+		"svelte-check": "^3.6.0",
+		"ts-node": "^10.9.2",
+		"tsconfig-paths": "^4.2.0",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"utils": "*",
+		"vite": "^4.4.2",
+		"vitest": "^0.32.2"
+	},
+	"dependencies": {
+		"@stenway/reliabletxt": "^1.1.0",
+		"@stenway/reliabletxt-io": "^1.1.0",
+		"crypto": "^1.0.1",
+		"dotenv": "^16.4.5",
+		"jsonwebtoken": "^9.0.2",
+		"node-vault": "^0.10.2",
+		"otplib": "^12.0.1",
+		"qrcode": "^1.5.3",
+		"svelte": "^4.2.7",
+		"uuid": "^9.0.1"
+	}
+}

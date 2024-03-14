@@ -1,0 +1,19 @@
+{
+	"name": "vault-server",
+	"version": "1.0.0",
+	"description": "El servidor de vault será levantado por docker-compose, el algoritmo servirá para hacer un unseal al servidor vault",
+	"main": "index.js",
+	"scripts": {
+		"start": "tsc && node ./dist/index.js"
+	},
+	"author": "Mariano L. Pasini",
+	"license": "ISC",
+	"devDependencies": {
+		"dotenv": "^16.3.1",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"node-vault": "^0.10.2"
+	}
+}
